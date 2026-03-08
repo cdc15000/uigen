@@ -1,0 +1,8 @@
+node_modules/
+.next/
+uigen/
+prisma/dev.db
+prisma/*.db-journal
+.env
+logs.txt
+.DS_Store
