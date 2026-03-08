@@ -61,6 +61,10 @@ afterEach(() => {
 });
 
 test("renders chat interface with message list and input", () => {
+  (useChat as any).mockReturnValue({
+    ...mockUseChat,
+    messages: [{ id: "1", role: "user", content: "Hello" }],
+  });
   render(<ChatInterface />);
 
   expect(screen.getByTestId("message-list")).toBeDefined();
@@ -138,6 +142,10 @@ test("isLoading is false when status is idle", () => {
 
 
 test("scrolls when messages change", () => {
+  (useChat as any).mockReturnValue({
+    ...mockUseChat,
+    messages: [{ id: "1", role: "user", content: "Hello" }],
+  });
   const { rerender } = render(<ChatInterface />);
 
   // Get initial scroll container
@@ -161,6 +169,10 @@ test("scrolls when messages change", () => {
 });
 
 test("renders with correct layout classes", () => {
+  (useChat as any).mockReturnValue({
+    ...mockUseChat,
+    messages: [{ id: "1", role: "user", content: "Hello" }],
+  });
   const { container } = render(<ChatInterface />);
 
   const mainDiv = container.firstChild as HTMLElement;
