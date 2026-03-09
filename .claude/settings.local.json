@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(npx vitest:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(npm audit:*)",
+      "Bash(npm list:*)",
+      "Bash(npm test:*)",
+      "mcp__playwright",
+      "Bash(gh pr:*)"
     ]
   }
 }
